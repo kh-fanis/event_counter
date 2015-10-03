@@ -1,0 +1,8 @@
+== README
+
+Application uses native Ajax technologies to render the events
+And devise gem for user authorization
+
+This app've been crated for interview in flatstack company location in Kazan
+
+By Fanis Khalfin
