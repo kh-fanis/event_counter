@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+$content-width: 800px
+
+body, p, ol, ul, td
+  font-family: helvetica, verdana, arial, sans-serif
+  font-size:   13px
+  line-height: 18px
+
+*
+  margin: 0
+  padding: 0
+
+#header, #footer
+  background: #333
+  width: 100%
+  // font-family: "Courier New", Courier, monospace, Verdana, Geneva, sans-serif
+
+#header
+  height: 22px
+
+#header-content, #footer-content
+  // width: $content-width
+  margin: auto
+
+#header-content, #footer-content, #body
+  min-width: 428px
+  max-width: $content-width
+  padding-left: 10px
+  padding-right: 10px
+
+#logo
+  padding: 3px
+  float: left
+
+#signLinks a, #logo a, #footer p
+  color: white
+  text-decoration: none
+
+#signLinks span
+  color: #999
+
+#signLinks
+  padding: 3px
+  float: right
+
+#body
+  clear: both
+  // width: $content-width
+  margin-top: 100px
+  margin: auto
+
+#footer
+  // position: absolute
+  // bottom: 0px
+  height: 18px

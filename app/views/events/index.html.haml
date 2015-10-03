@@ -1,0 +1,27 @@
+#formForCreateEventOverlay{class: :overlay}
+  #formForCreate{class: :overlaysBody}
+    %h1 Create new event
+    %input{type: :text, id: :new_event_title, placeholder: :Title}
+    %input{type: :text, id: :new_event_description, placeholder: :Description}
+    %input{type: :text, id: :new_event_date, placeholder: "Event being date"}
+    %input{type: :text, id: :new_event_time, placeholder: "Event being time"}
+    %br
+    %input{type: :checkbox, id: :new_event_secret} Look
+    %br
+    %button{id: :close_formForCreateEventOverlay} Close
+    %button{id: :save_event} Save
+#content
+  #search
+    #search-left
+      %div
+        %input{type: :text, id: :search_key}
+        %button{id: :search_button} Search
+    #search-right
+      %button{class: :button_left, id: :show_all_events} All
+      %button{class: :button_center, id: :show_my_events} Mine
+      %button{class: :button_right, id: :show_form_for_new_event} New
+  #main
+    #events
+
+    #pagesLinker
+      %button{:class => "silver-button", page_number: 0} 1

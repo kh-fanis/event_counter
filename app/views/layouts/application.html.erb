@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= application_name %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if !notice.nil? %>
+  <script>
+    window.messageForRender = "<%= notice %>";
+  </script>
+<% end %>
+<% if !alert.nil? %>
+  <script>
+    window.messageForRender = "<%= alert %>";
+  </script>
+<% end %>
+
+<div id="header">
+  <div id="header-content">
+    <div id="logo"><%= link_to application_name, root_path %></div>
+    <div id="signLinks">
+      <div id="userBar">
+        <a id="show_currentUserInformation"><%= current_user.full_name if current_user %></a>
+      </div>
+      <div id="signBar">
+        <%= link_to "Sign in", new_user_session_path %>
+        <span> | </span>
+        <%= link_to "Sign up", new_user_registration_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="body">
+  <%= @n %>
+  <!-- <p class="notice"><%= notice %></p> -->
+  <!-- <p class="alert"><%= alert %></p> -->
+
+  <div id="notice" class="overlaysBody"></div>
+  <div id="overlayOpacity"></div>
+  <div id="currentUserInformationOverlay" class="overlay">
+    <div id="currentUserInformation" class="overlaysBody">
+      <h1>Choise action You want to</h1>
+      <button id="close_currentUserInformation">Close</button>
+      <%= link_to "Edit My Information", edit_user_registration_path, class: :link_as_button %>
+      <!-- / %button{id: :save_currentUserInformation} Save -->
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, remote: true, id: :log_out_current_user, class: :link_as_button %>
+    </div>
+  </div>
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <div id="footer-content">
+    <p>2015 &copy; All rights protected</p>
+  </div>
+</div>
+
+</body>
+</html>
